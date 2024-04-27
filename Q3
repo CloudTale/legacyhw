@@ -1,0 +1,21 @@
+package Legacy;
+
+import java.util.*;
+
+public class Q3 {
+	public static List<List<Integer>> findMissingRanges(int[] IDs, int lower, int upper) {
+       List<List<Integer>> missingRanges = new ArrayList<>();
+       int nextID = lower;
+
+       for (int ID : IDs) {
+           if (ID > nextID) {
+                missingRanges.add(Arrays.asList(nextID, ID - 1));
+           }
+           nextID = ID + 1;
+       }
+       if (nextID <= upper) {
+           missingRanges.add(Arrays.asList(nextID, upper));
+       }
+       return missingRanges;
+   }
+}
