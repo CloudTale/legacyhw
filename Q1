@@ -1,0 +1,31 @@
+package Legacy;
+
+import java.util.*;
+
+public class Q1 {
+	public static char findMedian(char[] arr) {
+		Arrays.sort(arr);
+		int n = arr.length;
+		if(n % 2 == 0) {
+			return arr[n/2 - 1];
+		}
+		else {
+			return arr[n/2];
+		}
+	}
+	
+	public static char findMode(char[] arr) {
+		HashMap<Character, Integer> frequency = new HashMap<>();
+		char mode = arr[0];
+		int maxFrequency = 1;
+		
+		for(char i : arr) {
+			frequency.put(i, frequency.getOrDefault(i, 0) + 1);
+			if(frequency.get(i) > maxFrequency) {
+				maxFrequency = frequency.get(i);
+                mode = i;
+			}
+		}
+		return mode;
+	}
+}
