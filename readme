@@ -1,0 +1,46 @@
+Function: findMedian
+Input: an array of characters (arr)
+Output: a character
+
+Description:
+1. Sort the array arr.
+2. Calculate the length of arr and store it in n.
+3. If n is even, return the character at index (n/2 - 1) from arr.
+4. If n is odd, return the character at index (n/2) from arr.
+
+Function: findMode
+Input: an array of characters (arr)
+Output: a character
+
+Description:
+1. Create an empty HashMap named frequency.
+2. Set the mode to the first character of arr and initialize maxFrequency to 1.
+3. For each character i in arr, do the following:
+    - Increase the frequency count of character i in the frequency HashMap.
+    - If the frequency count of character i is greater than maxFrequency, update maxFrequency to the frequency count of character i and set the mode to character i.
+4. Return the mode.
+
+Function: findZeroIndex
+Input: two arrays of integers (list1, list2)
+Output: an integer representing an index
+
+Description:
+1. Initialize left to 0 and right to the length of list2 - 1.
+2. While left is less than right, do the following:
+    - Calculate mid as the average of left and right.
+    - If the value at index mid in list2 is equal to the value at index mid in list1, update left to mid + 1.
+    - Otherwise, update right to mid.
+3. Return left.
+
+Function: findMissingRanges
+Input: an array of integers representing IDs (IDs), lower bound (lower), and upper bound (upper)
+Output: a list of lists of integers
+
+Description:
+1. Initialize an empty list of lists of integers called missingRanges.
+2. Set nextID to the lower bound.
+3. For each ID in the array IDs, do the following:
+    - If ID is greater than nextID, add a sublist [nextID, ID - 1] to missingRanges.
+    - Update nextID to ID + 1.
+4. If nextID is less than or equal to the upper bound, add a sublist [nextID, upper] to missingRanges.
+5. Return missingRanges.
